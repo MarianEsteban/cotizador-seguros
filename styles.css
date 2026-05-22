@@ -30,6 +30,19 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.brand-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+.brand-logo-header {
+  margin: 0 auto 0.45rem;
+  max-height: 88px;
+}
+
 .tag {
   margin: 0;
   color: var(--olive);
@@ -122,6 +135,14 @@ select:focus {
 .footer-actions {
   margin-top: 1rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.brand-logo-footer {
+  max-height: 56px;
 }
 
 .btn-link {
@@ -132,4 +153,14 @@ select:focus {
 
 .btn-link:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .brand-logo-header {
+    max-height: 68px;
+  }
+
+  .brand-logo-footer {
+    max-height: 46px;
+  }
 }
