@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ME Seguros - Cotizador rápido</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -15,95 +18,136 @@
 
       <nav class="site-nav" aria-label="Navegación principal">
         <a href="https://marianesteban.github.io/me-seguros/">Inicio</a>
-        <a href="index.html" aria-current="page">Cotizador</a>
-        <a href="https://marianesteban.github.io/me-seguros/">Volver a la landing</a>
+        <a href="#cotizador">Cotizador</a>
+        <a href="#contacto">Contacto</a>
       </nav>
 
-      <a class="btn-whatsapp" href="https://wa.me/5492291515617" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a
+        class="btn-whatsapp"
+        href="https://wa.me/5492291515617?text=Hola%20Mariano%2C%20quiero%20hacer%20una%20consulta%20sobre%20seguros."
+        target="_blank"
+        rel="noopener noreferrer"
+      >Consultar por WhatsApp</a>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero" aria-labelledby="hero-title">
-      <p class="professional-data">Mariano Esteban · Asesor de Seguros · Matrícula N° 87555</p>
-      <h1 id="hero-title">Cotizador rápido ME Seguros</h1>
-      <p class="subtitle">Completá tus datos para ordenar tu consulta y enviarla por WhatsApp en segundos.</p>
+  <main>
+    <section class="hero-wrap">
+      <div class="container hero-grid">
+        <section class="hero-main" aria-labelledby="hero-title">
+          <p class="eyebrow">Mariano Esteban · Asesor de Seguros · Matrícula N° 87555</p>
+          <h1 id="hero-title">Cotizador rápido ME Seguros</h1>
+          <p class="hero-text">Completá tus datos, elegí el tipo de seguro y enviá tu consulta ordenada por WhatsApp.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#cotizador">Completar cotización</a>
+            <a class="btn btn-secondary" href="https://marianesteban.github.io/me-seguros/">Volver a la landing</a>
+          </div>
+          <div class="trust-chips" aria-label="Beneficios del proceso">
+            <span>Consulta simple</span>
+            <span>Sin compromiso</span>
+            <span>Respuesta por WhatsApp</span>
+          </div>
+        </section>
+
+        <aside class="hero-card" aria-label="Cómo funciona">
+          <h2>Cómo funciona</h2>
+          <ol>
+            <li><strong>01</strong> Completás tus datos</li>
+            <li><strong>02</strong> Elegís la cobertura</li>
+            <li><strong>03</strong> Enviás la consulta por WhatsApp</li>
+          </ol>
+        </aside>
+      </div>
     </section>
 
-    <section class="content-grid">
-      <section class="card" aria-labelledby="form-title">
-        <h2 id="form-title">Datos para cotizar</h2>
-
-        <form id="cotizadorForm" novalidate>
-          <div class="field">
-            <label for="nombre">Nombre y apellido *</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Ej: María Esteban" required />
+    <section id="cotizador" class="section">
+      <div class="container">
+        <article class="form-card" aria-labelledby="form-title">
+          <div class="section-head">
+            <p class="section-kicker">Cotización rápida</p>
+            <h2 id="form-title">Completá tus datos para cotizar</h2>
           </div>
 
-          <div class="field">
-            <label for="localidadGeneral">Localidad *</label>
-            <input type="text" id="localidadGeneral" name="localidadGeneral" placeholder="Ej: Mar del Plata" required />
-          </div>
+          <form id="cotizadorForm" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="nombre">Nombre y apellido *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: María Esteban" required />
+              </div>
 
-          <div class="field">
-            <label for="telefono">Teléfono o WhatsApp *</label>
-            <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2291512345" required />
-          </div>
+              <div class="field">
+                <label for="localidadGeneral">Localidad *</label>
+                <input type="text" id="localidadGeneral" name="localidadGeneral" placeholder="Ej: Mar del Plata" required />
+              </div>
 
-          <div class="field">
-            <label for="tipoSeguro">Tipo de seguro a cotizar *</label>
-            <select id="tipoSeguro" name="tipoSeguro" required>
-              <option value="">Seleccionar...</option>
-              <option value="Automotor">Automotor</option>
-              <option value="Hogar">Hogar</option>
-              <option value="Comercio">Comercio</option>
-              <option value="Vida">Vida</option>
-              <option value="Accidentes personales">Accidentes personales</option>
-              <option value="Asistencia al viajero">Asistencia al viajero</option>
-            </select>
-          </div>
+              <div class="field">
+                <label for="telefono">Teléfono o WhatsApp *</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2291512345" required />
+              </div>
 
-          <div id="dynamicFields" class="dynamic-fields"></div>
+              <div class="field">
+                <label for="tipoSeguro">Tipo de seguro a cotizar *</label>
+                <select id="tipoSeguro" name="tipoSeguro" required>
+                  <option value="">Seleccionar...</option>
+                  <option value="Automotor">Automotor</option>
+                  <option value="Hogar">Hogar</option>
+                  <option value="Comercio">Comercio</option>
+                  <option value="Vida">Vida</option>
+                  <option value="Accidentes personales">Accidentes personales</option>
+                  <option value="Asistencia al viajero">Asistencia al viajero</option>
+                </select>
+              </div>
+            </div>
 
-          <p id="errorMessage" class="error-message" role="alert" aria-live="polite"></p>
+            <div id="dynamicFields" class="dynamic-fields"></div>
 
-          <button type="submit" class="btn-primary">Enviar consulta por WhatsApp</button>
-        </form>
-      </section>
+            <p id="errorMessage" class="error-message" role="alert" aria-live="polite"></p>
 
-      <aside class="info-card" aria-label="Cómo funciona">
-        <h2>Cómo funciona</h2>
-        <ol>
-          <li>Completás tus datos principales.</li>
-          <li>Seleccionás el tipo de seguro y sus datos específicos.</li>
-          <li>Se abre WhatsApp con tu mensaje listo para enviar a ME Seguros.</li>
-        </ol>
-      </aside>
+            <button type="submit" class="btn btn-submit">Enviar consulta por WhatsApp</button>
+          </form>
+        </article>
+      </div>
     </section>
 
-    <section class="contact-card" aria-label="Canales de contacto">
-      <h2>Contacto ME Seguros</h2>
-      <ul>
-        <li><strong>WhatsApp:</strong> <a href="https://wa.me/5492291515617" target="_blank" rel="noopener noreferrer">+54 9 2291 51-5617</a></li>
-        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/mestebanseguros/" target="_blank" rel="noopener noreferrer">@mestebanseguros</a></li>
-        <li><strong>Email:</strong> <a href="mailto:mariano_esteban94@hotmail.com.ar">mariano_esteban94@hotmail.com.ar</a></li>
-        <li><strong>Landing principal:</strong> <a href="https://marianesteban.github.io/me-seguros/" target="_blank" rel="noopener noreferrer">marianesteban.github.io/me-seguros</a></li>
-      </ul>
+    <section id="contacto" class="section section-contact">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-kicker">Contacto</p>
+          <h2>Canales ME Seguros</h2>
+        </div>
+
+        <div class="contact-grid">
+          <a class="contact-item" href="https://wa.me/5492291515617" target="_blank" rel="noopener noreferrer">
+            <h3>WhatsApp</h3>
+            <p>5492291515617</p>
+          </a>
+          <a class="contact-item" href="https://www.instagram.com/mestebanseguros/" target="_blank" rel="noopener noreferrer">
+            <h3>Instagram</h3>
+            <p>@mestebanseguros</p>
+          </a>
+          <a class="contact-item" href="mailto:mariano_esteban94@hotmail.com.ar">
+            <h3>Email</h3>
+            <p>mariano_esteban94@hotmail.com.ar</p>
+          </a>
+          <a class="contact-item" href="https://marianesteban.github.io/me-seguros/" target="_blank" rel="noopener noreferrer">
+            <h3>Landing principal</h3>
+            <p>marianesteban.github.io/me-seguros/</p>
+          </a>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <img class="brand-logo footer-logo" src="assets/img/logo-verde.PNG" alt="ME Seguros" />
-      <p>ME Seguros · Mariano Esteban · Asesor de Seguros · Matrícula N° 87555</p>
-      <div class="footer-links">
-        <a href="https://www.instagram.com/mestebanseguros/" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://marianesteban.github.io/me-seguros/" target="_blank" rel="noopener noreferrer">Landing principal</a>
-        <a href="mailto:mariano_esteban94@hotmail.com.ar">mariano_esteban94@hotmail.com.ar</a>
-      </div>
+    <div class="container footer-inner">
+      <img class="footer-logo" src="assets/img/logo-verde.PNG" alt="ME Seguros" />
+      <p>© <span id="year"></span> ME Seguros · Mariano Esteban · Asesor de Seguros · Matrícula N° 87555</p>
     </div>
   </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
