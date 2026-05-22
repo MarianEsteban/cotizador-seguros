@@ -3,87 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ME Seguros - Cotizador rápido</title>
+  <title>ME Seguros | Cotizador</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
-    <div class="header-inner">
-      <a class="brand-link" href="https://marianesteban.github.io/me-seguros/" aria-label="Ir a la landing principal de ME Seguros">
-        <img class="brand-logo" src="assets/img/logo-verde.PNG" alt="ME Seguros" />
+    <div class="container header-wrap">
+      <a class="brand" href="https://marianesteban.github.io/me-seguros/" aria-label="ME Seguros">
+        <img src="assets/img/logo-verde.PNG" alt="ME Seguros" />
       </a>
 
-      <nav class="site-nav" aria-label="Navegación principal">
+      <nav class="main-nav" aria-label="Navegación principal">
         <a href="https://marianesteban.github.io/me-seguros/">Inicio</a>
         <a href="#cotizador">Cotizador</a>
+        <a href="#funciona">Cómo funciona</a>
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <a
-        class="btn-whatsapp"
-        href="https://wa.me/5492291515617?text=Hola%20Mariano%2C%20quiero%20hacer%20una%20consulta%20sobre%20seguros."
-        target="_blank"
-        rel="noopener noreferrer"
-      ><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.4 0 .02 5.38.02 12c0 2.12.56 4.2 1.61 6.04L0 24l6.15-1.6A11.95 11.95 0 0 0 12.02 24h.01c6.62 0 12-5.38 12-12 0-3.2-1.25-6.2-3.51-8.52ZM12.03 21.8a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.65.95.98-3.56-.24-.37A9.78 9.78 0 1 1 12.03 21.8Zm5.37-7.33c-.3-.15-1.8-.88-2.08-.98-.28-.1-.48-.15-.68.15s-.78.98-.95 1.18c-.18.2-.35.23-.65.08-.3-.15-1.25-.46-2.39-1.47a8.86 8.86 0 0 1-1.65-2.05c-.17-.3-.02-.47.13-.62.13-.12.3-.33.45-.5.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.64-.94-2.24-.25-.6-.5-.52-.68-.52h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.02-1.05 2.48 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.13 4.55.72.31 1.29.5 1.73.64.73.23 1.4.2 1.93.13.59-.09 1.8-.74 2.05-1.45.25-.72.25-1.33.18-1.46-.08-.13-.28-.2-.58-.35Z"/></svg></span><span>Consultar por WhatsApp</span></a>
+      <a class="btn btn-whatsapp" href="https://wa.me/5492291515617?text=Hola%20Mariano%2C%20quiero%20hacer%20una%20consulta%20sobre%20seguros." target="_blank" rel="noopener noreferrer">WhatsApp</a>
     </div>
   </header>
 
   <main>
-    <section class="hero-wrap">
-      <div class="container hero-grid">
-        <section class="hero-main" aria-labelledby="hero-title">
-          <p class="eyebrow">Mariano Esteban · Asesor de Seguros · Matrícula N° 87555</p>
-          <h1 id="hero-title">Cotizador rápido ME Seguros</h1>
-          <p class="hero-text">Completá tus datos, elegí el tipo de seguro y enviá tu consulta ordenada por WhatsApp.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#cotizador">Completar cotización</a>
-            <a class="btn btn-secondary" href="https://marianesteban.github.io/me-seguros/">Volver a la landing</a>
-          </div>
-          <div class="trust-chips" aria-label="Beneficios del proceso">
-            <span>Consulta simple</span>
-            <span>Sin compromiso</span>
-            <span>Respuesta por WhatsApp</span>
-          </div>
-        </section>
-
-        <aside class="hero-card" aria-label="Cómo funciona">
-          <h2>Cómo funciona</h2>
-          <ol>
-            <li><strong>01</strong> Completás tus datos</li>
-            <li><strong>02</strong> Elegís la cobertura</li>
-            <li><strong>03</strong> Enviás la consulta por WhatsApp</li>
-          </ol>
-        </aside>
+    <section class="hero">
+      <div class="container hero-content">
+        <p class="pill">ME Seguros · Mariano Esteban · Asesor de Seguros · Matrícula N° 87555</p>
+        <h1>Cotizador de Seguros</h1>
+        <p>Completá tu consulta en un minuto y enviala por WhatsApp para recibir asesoramiento profesional y personalizado.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#cotizador">Iniciar cotización</a>
+          <a class="btn btn-outline" href="https://marianesteban.github.io/me-seguros/" target="_blank" rel="noopener noreferrer">Ver landing principal</a>
+        </div>
       </div>
     </section>
 
     <section id="cotizador" class="section">
       <div class="container">
-        <article class="form-card" aria-labelledby="form-title">
-          <div class="section-head">
-            <p class="section-kicker">Cotización rápida</p>
-            <h2 id="form-title">Completá tus datos para cotizar</h2>
-            <p class="form-disclaimer">Este cotizador no emite una cotización final automática. Sirve para ordenar tu consulta y enviarla por WhatsApp para recibir asesoramiento personalizado.</p>
-          </div>
+        <div class="section-title">
+          <h2>Cotizador rápido</h2>
+          <p class="note">Este cotizador no emite una cotización final automática. Sirve para ordenar tu consulta y enviarla por WhatsApp para recibir asesoramiento personalizado.</p>
+        </div>
 
+        <article class="card form-card">
           <form id="cotizadorForm" novalidate>
             <div class="form-grid">
               <div class="field">
                 <label for="nombre">Nombre y apellido *</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ej: María Esteban" required />
+                <input type="text" id="nombre" name="nombre" required />
               </div>
 
               <div class="field">
                 <label for="localidadGeneral">Localidad *</label>
-                <input type="text" id="localidadGeneral" name="localidadGeneral" placeholder="Ej: Mar del Plata" required />
+                <input type="text" id="localidadGeneral" name="localidadGeneral" required />
               </div>
 
               <div class="field">
                 <label for="telefono">Teléfono o WhatsApp *</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2291512345" required />
+                <input type="tel" id="telefono" name="telefono" required />
               </div>
 
               <div class="field">
@@ -101,54 +80,51 @@
             </div>
 
             <div id="dynamicFields" class="dynamic-fields"></div>
-
             <p id="errorMessage" class="error-message" role="alert" aria-live="polite"></p>
 
-            <button type="submit" class="btn btn-submit"><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.4 0 .02 5.38.02 12c0 2.12.56 4.2 1.61 6.04L0 24l6.15-1.6A11.95 11.95 0 0 0 12.02 24h.01c6.62 0 12-5.38 12-12 0-3.2-1.25-6.2-3.51-8.52ZM12.03 21.8a9.8 9.8 0 0 1-5-1.37l-.36-.21-3.65.95.98-3.56-.24-.37A9.78 9.78 0 1 1 12.03 21.8Zm5.37-7.33c-.3-.15-1.8-.88-2.08-.98-.28-.1-.48-.15-.68.15s-.78.98-.95 1.18c-.18.2-.35.23-.65.08-.3-.15-1.25-.46-2.39-1.47a8.86 8.86 0 0 1-1.65-2.05c-.17-.3-.02-.47.13-.62.13-.12.3-.33.45-.5.15-.17.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.68-1.64-.94-2.24-.25-.6-.5-.52-.68-.52h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.02-1.05 2.48 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.13 4.55.72.31 1.29.5 1.73.64.73.23 1.4.2 1.93.13.59-.09 1.8-.74 2.05-1.45.25-.72.25-1.33.18-1.46-.08-.13-.28-.2-.58-.35Z"/></svg></span><span>Enviar consulta por WhatsApp</span></button>
+            <button type="submit" class="btn btn-primary btn-submit">Enviar consulta por WhatsApp</button>
           </form>
         </article>
       </div>
     </section>
 
-    <section id="contacto" class="section section-contact">
+    <section id="funciona" class="section section-soft">
       <div class="container">
-        <div class="section-head">
-          <p class="section-kicker">Contacto</p>
-          <h2>Canales ME Seguros</h2>
+        <div class="section-title">
+          <h2>Cómo funciona</h2>
+        </div>
+        <div class="steps-grid">
+          <article class="card step-card"><span>01</span><h3>Completás tus datos</h3><p>Cargá tu información principal y elegí el tipo de seguro.</p></article>
+          <article class="card step-card"><span>02</span><h3>Sumás detalles</h3><p>El formulario agrega campos según la cobertura que necesitás.</p></article>
+          <article class="card step-card"><span>03</span><h3>Enviás por WhatsApp</h3><p>Se abre un mensaje listo para que Mariano te asesore.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contacto</h2>
         </div>
 
         <div class="contact-grid">
-          <a class="contact-item" href="https://wa.me/5492291515617" target="_blank" rel="noopener noreferrer">
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.4 0 .02 5.38.02 12c0 2.12.56 4.2 1.61 6.04L0 24l6.15-1.6A11.95 11.95 0 0 0 12.02 24h.01c6.62 0 12-5.38 12-12 0-3.2-1.25-6.2-3.51-8.52Z"/></svg></span>
-            <div><h3>WhatsApp</h3><p>5492291515617</p></div>
-          </a>
-          <a class="contact-item" href="https://www.instagram.com/mestebanseguros/" target="_blank" rel="noopener noreferrer">
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4Zm9.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg></span>
-            <div><h3>Instagram</h3><p>@mestebanseguros</p></div>
-          </a>
-          <a class="contact-item" href="mailto:mariano_esteban94@hotmail.com.ar">
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 5h18a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.28l9 5.4 9-5.4V7l-9 5.4-9-5.4Z"/></svg></span>
-            <div><h3>Email</h3><p>mariano_esteban94@hotmail.com.ar</p></div>
-          </a>
-          <a class="contact-item" href="https://marianesteban.github.io/me-seguros/" target="_blank" rel="noopener noreferrer">
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 2 7v2h20V7L12 2Zm-8 9h2v7H4v-7Zm5 0h2v7H9v-7Zm5 0h2v7h-2v-7Zm5 0h2v7h-2v-7ZM2 20h20v2H2v-2Z"/></svg></span>
-            <div><h3>Landing principal</h3><p>marianesteban.github.io/me-seguros/</p></div>
-          </a>
+          <a class="card contact-card" href="https://wa.me/5492291515617" target="_blank" rel="noopener noreferrer"><h3>WhatsApp</h3><p>5492291515617</p></a>
+          <a class="card contact-card" href="https://www.instagram.com/mestebanseguros/" target="_blank" rel="noopener noreferrer"><h3>Instagram</h3><p>@mestebanseguros</p></a>
+          <a class="card contact-card" href="mailto:mariano_esteban94@hotmail.com.ar"><h3>Email</h3><p>mariano_esteban94@hotmail.com.ar</p></a>
+          <a class="card contact-card" href="https://marianesteban.github.io/me-seguros/" target="_blank" rel="noopener noreferrer"><h3>Landing principal</h3><p>marianesteban.github.io/me-seguros/</p></a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <img class="footer-logo" src="assets/img/logo-verde.PNG" alt="ME Seguros" />
-      <p>© <span id="year"></span> ME Seguros · Mariano Esteban · Asesor de Seguros · Matrícula N° 87555</p>
+    <div class="container footer-wrap">
+      <img src="assets/img/logo-verde.PNG" alt="ME Seguros" class="footer-logo" />
+      <p>ME Seguros · Mariano Esteban · Asesor de Seguros · Matrícula N° 87555</p>
+      <p><a href="https://wa.me/5492291515617" target="_blank" rel="noopener noreferrer">WhatsApp: 5492291515617</a> · <a href="https://www.instagram.com/mestebanseguros/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="mailto:mariano_esteban94@hotmail.com.ar">Email</a></p>
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
