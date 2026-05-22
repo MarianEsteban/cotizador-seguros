@@ -6,6 +6,29 @@ const tipoSeguro = document.getElementById("tipoSeguro");
 const dynamicFields = document.getElementById("dynamicFields");
 const errorMessage = document.getElementById("errorMessage");
 
+const navToggle = document.querySelector(".nav-toggle");
+const primaryNav = document.getElementById("primary-navigation");
+const navLinks = primaryNav ? primaryNav.querySelectorAll("a") : [];
+const currentYear = document.getElementById("current-year");
+
+if (navToggle && primaryNav) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = primaryNav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      primaryNav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
+
 // Estructura de campos por tipo de seguro
 const fieldsConfig = {
   "Automotor": [
