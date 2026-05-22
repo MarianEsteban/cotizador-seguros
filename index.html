@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ME Seguros - Cotizador rápido</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <p class="tag">ME Seguros</p>
+      <h1>Cotizador rápido</h1>
+      <p class="subtitle">Completá tus datos y enviá tu consulta en segundos por WhatsApp.</p>
+    </header>
+
+    <section class="card" aria-labelledby="form-title">
+      <h2 id="form-title">Datos para cotizar</h2>
+
+      <form id="cotizadorForm" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre y apellido *</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: María Esteban" required />
+        </div>
+
+        <div class="field">
+          <label for="localidadGeneral">Localidad *</label>
+          <input type="text" id="localidadGeneral" name="localidadGeneral" placeholder="Ej: Mar del Plata" required />
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono o WhatsApp *</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Ej: 2291512345" required />
+        </div>
+
+        <div class="field">
+          <label for="tipoSeguro">Tipo de seguro a cotizar *</label>
+          <select id="tipoSeguro" name="tipoSeguro" required>
+            <option value="">Seleccionar...</option>
+            <option value="Automotor">Automotor</option>
+            <option value="Hogar">Hogar</option>
+            <option value="Comercio">Comercio</option>
+            <option value="Vida">Vida</option>
+            <option value="Accidentes personales">Accidentes personales</option>
+            <option value="Asistencia al viajero">Asistencia al viajero</option>
+          </select>
+        </div>
+
+        <!-- Campos dinámicos por tipo de seguro -->
+        <div id="dynamicFields" class="dynamic-fields"></div>
+
+        <p id="errorMessage" class="error-message" role="alert" aria-live="polite"></p>
+
+        <button type="submit" class="btn-primary">Enviar consulta por WhatsApp</button>
+      </form>
+    </section>
+
+    <footer class="footer-actions">
+      <a class="btn-link" href="https://marianesteban.github.io/me-seguros/">← Volver a la landing principal</a>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
