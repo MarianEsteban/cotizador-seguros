@@ -71,21 +71,30 @@
         </div>
 
         <article class="card form-card">
+          <div class="note" aria-label="Antes de empezar">
+            <h3>Antes de empezar</h3>
+            <ul>
+              <li>Completá tus datos básicos.</li>
+              <li>Elegí el tipo de seguro que querés consultar.</li>
+              <li>Sumá la información específica para recibir una respuesta más precisa.</li>
+            </ul>
+          </div>
+
           <form id="cotizadorForm" novalidate>
             <div class="form-grid">
               <div class="field">
                 <label for="nombre">Nombre y apellido *</label>
-                <input type="text" id="nombre" name="nombre" required />
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required />
               </div>
 
               <div class="field">
                 <label for="localidadGeneral">Localidad *</label>
-                <input type="text" id="localidadGeneral" name="localidadGeneral" required />
+                <input type="text" id="localidadGeneral" name="localidadGeneral" placeholder="Ej. Miramar" required />
               </div>
 
               <div class="field">
                 <label for="telefono">Teléfono o WhatsApp *</label>
-                <input type="tel" id="telefono" name="telefono" required />
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej. 2291 51-5617" required />
               </div>
 
               <div class="field">

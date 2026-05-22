@@ -32,37 +32,37 @@ if (currentYear) {
 // Estructura de campos por tipo de seguro
 const fieldsConfig = {
   "Automotor": [
-    { key: "marcaModelo", label: "Marca y modelo", type: "text" },
-    { key: "anio", label: "Año", type: "number" },
-    { key: "uso", label: "Uso particular o comercial", type: "text" },
+    { key: "marcaModelo", label: "Marca y modelo", type: "text", placeholder: "Ej. Toyota Corolla XEI" },
+    { key: "anio", label: "Año", type: "number", placeholder: "Ej. 2020" },
+    { key: "uso", label: "Uso particular o comercial", type: "text", placeholder: "Ej. Uso particular" },
   ],
   "Hogar": [
-    { key: "localidadHogar", label: "Localidad", type: "text" },
-    { key: "tipoVivienda", label: "Tipo de vivienda", type: "text" },
-    { key: "condicion", label: "Propietario o inquilino", type: "text" },
+    { key: "localidadHogar", label: "Localidad", type: "text", placeholder: "Ej. Miramar" },
+    { key: "tipoVivienda", label: "Tipo de vivienda", type: "text", placeholder: "Ej. Casa" },
+    { key: "condicion", label: "Propietario o inquilino", type: "text", placeholder: "Ej. Propietario" },
   ],
   "Comercio": [
-    { key: "rubro", label: "Rubro", type: "text" },
-    { key: "localidadComercio", label: "Localidad", type: "text" },
-    { key: "tipoLocal", label: "Tipo de local", type: "text" },
+    { key: "rubro", label: "Rubro", type: "text", placeholder: "Ej. Indumentaria" },
+    { key: "localidadComercio", label: "Localidad", type: "text", placeholder: "Ej. Mar del Plata" },
+    { key: "tipoLocal", label: "Tipo de local", type: "text", placeholder: "Ej. Local a la calle" },
   ],
   "Vida": [
-    { key: "edad", label: "Edad", type: "number" },
-    { key: "ocupacion", label: "Ocupación", type: "text" },
+    { key: "edad", label: "Edad", type: "number", placeholder: "Ej. 35" },
+    { key: "ocupacion", label: "Ocupación", type: "text", placeholder: "Ej. Docente" },
   ],
   "Accidentes personales": [
-    { key: "actividad", label: "Actividad", type: "text" },
-    { key: "cantidadPersonas", label: "Cantidad de personas", type: "number" },
+    { key: "actividad", label: "Actividad", type: "text", placeholder: "Ej. Albañilería" },
+    { key: "cantidadPersonas", label: "Cantidad de personas", type: "number", placeholder: "Ej. 3" },
   ],
   "Asistencia al viajero": [
-    { key: "destino", label: "Destino", type: "text" },
+    { key: "destino", label: "Destino", type: "text", placeholder: "Ej. Brasil" },
     { key: "fechaSalida", label: "Fecha de salida", type: "date" },
     { key: "fechaRegreso", label: "Fecha de regreso", type: "date" },
-    { key: "cantidadPasajeros", label: "Cantidad de pasajeros", type: "number" },
+    { key: "cantidadPasajeros", label: "Cantidad de pasajeros", type: "number", placeholder: "Ej. 2" },
   ],
 };
 
-function createField({ key, label, type }) {
+function createField({ key, label, type, placeholder }) {
   const wrapper = document.createElement("div");
   wrapper.className = "field";
 
@@ -75,6 +75,7 @@ function createField({ key, label, type }) {
   input.name = key;
   input.type = type;
   input.required = true;
+  if (placeholder) input.placeholder = placeholder;
 
   wrapper.appendChild(labelEl);
   wrapper.appendChild(input);
@@ -119,17 +120,20 @@ function buildWhatsappMessage() {
   const selectedType = tipoSeguro.value;
   const specificFields = fieldsConfig[selectedType] || [];
 
-  let message = "*Nueva consulta desde Cotizador rápido*%0A";
-  message += `%0A*Nombre y apellido:* ${encodeURIComponent(getTrimmedValue("nombre"))}`;
-  message += `%0A*Localidad:* ${encodeURIComponent(getTrimmedValue("localidadGeneral"))}`;
-  message += `%0A*Teléfono/WhatsApp:* ${encodeURIComponent(getTrimmedValue("telefono"))}`;
-  message += `%0A*Tipo de seguro:* ${encodeURIComponent(selectedType)}`;
+  let message = "Hola Mariano, quiero solicitar una cotización.";
+  message += `\n\nTipo de seguro: ${selectedType}`;
+  message += `\nNombre: ${getTrimmedValue("nombre")}`;
+  message += `\nLocalidad: ${getTrimmedValue("localidadGeneral")}`;
+  message += `\nTeléfono: ${getTrimmedValue("telefono")}`;
 
-  specificFields.forEach((field) => {
-    message += `%0A*${encodeURIComponent(field.label)}:* ${encodeURIComponent(getTrimmedValue(field.key))}`;
-  });
+  if (specificFields.length) {
+    message += "\nDatos adicionales:";
+    specificFields.forEach((field) => {
+      message += `\n- ${field.label}: ${getTrimmedValue(field.key)}`;
+    });
+  }
 
-  return message;
+  return encodeURIComponent(message);
 }
 
 tipoSeguro.addEventListener("change", (event) => {
